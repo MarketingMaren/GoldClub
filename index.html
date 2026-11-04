@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Das goldene Zeitalter des GoldClubs</title>
+<meta name="description" content="Bald öffnen sich die Türen. Vernissage After Dark, 27. November 2026, 18:30 Uhr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05101f;
+    --wall: #0b1a33;
+    --gold: #e8c060;
+    --gold-2: #b8862f;
+    --gold-3: #fff1bf;
+    --text: #f4efe6;
+    --muted: #9fb1cc;
+    --velvet: #8e1630;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; }
+  body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 0%, rgba(232,192,96,0.16), transparent 70%),
+      linear-gradient(180deg, var(--wall), var(--bg) 75%);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    padding: 40px 16px 32px;
+  }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+  }
+  h1 {
+    font-family: "Playfair Display", serif; font-weight: 900;
+    font-size: clamp(34px, 9.5vw, 64px); line-height: 1.05; margin-top: 14px; max-width: 720px;
+    background: linear-gradient(180deg, var(--gold-3), var(--gold) 55%, var(--gold-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub { margin-top: 14px; color: var(--muted); max-width: 460px; line-height: 1.55; font-size: 15px; }
+
+  .stage { position: relative; width: min(340px, 86vw); margin: 34px auto 0; }
+  .door-btn { display: block; width: 100%; background: none; border: none; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .door-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; border-radius: 8px; }
+  .door { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6)); }
+  .door-btn.shake .door { animation: shake 0.5s; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); } 20% { transform: translateX(-6px) rotate(-0.6deg); }
+    40% { transform: translateX(6px) rotate(0.6deg); } 60% { transform: translateX(-4px); } 80% { transform: translateX(3px); }
+  }
+  .glow { animation: glow 2.6s ease-in-out infinite; }
+  @keyframes glow { 50% { opacity: 0.35; } }
+  .shine { animation: shine 6s ease-in-out infinite; }
+  @keyframes shine { 0%, 60% { transform: translateX(-260px); } 100% { transform: translateX(320px); } }
+
+  .rope {
+    width: min(420px, 96vw); height: auto; display: block;
+    position: relative; left: 50%; transform: translateX(-50%);
+    margin-top: -18%; z-index: 2; pointer-events: none;
+  }
+
+  .hint { min-height: 22px; margin-top: 16px; font-size: 14px; color: var(--gold); font-style: italic; font-family: "Playfair Display", serif; transition: opacity 0.3s; }
+
+  .countdown-label { margin-top: 30px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .countdown { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+  .unit {
+    width: 74px; padding: 12px 0 10px; border: 1px solid rgba(232,192,96,0.35);
+    background: rgba(255,255,255,0.03); border-radius: 4px;
+  }
+  .unit b { display: block; font-family: "Playfair Display", serif; font-size: 34px; font-variant-numeric: tabular-nums; color: var(--text); line-height: 1; }
+  .unit span { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .date { margin-top: 16px; font-size: 14px; color: var(--text); }
+  .date strong { color: var(--gold); font-weight: 600; }
+
+  .plaque {
+    margin-top: 34px; background: linear-gradient(180deg, #f3e2b3, #c9a45a); color: #2a1d06;
+    padding: 12px 18px; border-radius: 2px; max-width: 320px; font-size: 12px; line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  .plaque b { display: block; font-family: "Playfair Display", serif; font-size: 16px; }
+  .plaque em { display: block; margin-top: 4px; opacity: 0.8; font-size: 11px; }
+
+  footer { margin-top: 36px; font-size: 11px; color: #5f7292; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow, .shine, .door-btn.shake .door { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<p class="eyebrow">Vernissage After Dark · Exponat des Marketing-Teams</p>
+<h1>Das goldene Zeitalter des GoldClubs</h1>
+<p class="sub">Hinter dieser Tür wird gerade eine Epoche restauriert. Aus einer Zeit, in der jeder Punkt Gold wert war.</p>
+
+<div class="stage">
+  <button class="door-btn" id="door" aria-label="Die goldene Tür ist noch verschlossen">
+    <svg class="door" viewBox="0 0 300 400" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff1bf"/><stop offset="0.3" stop-color="#e8c060"/>
+          <stop offset="0.55" stop-color="#b8862f"/><stop offset="0.8" stop-color="#f0d27a"/><stop offset="1" stop-color="#9c6f22"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f3d684"/><stop offset="1" stop-color="#a87a28"/>
+        </linearGradient>
+        <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="light" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#fff6d0"/><stop offset="1" stop-color="#ffbb1c" stop-opacity="0"/>
+        </radialGradient>
+        <clipPath id="leaves"><path d="M50 392 V150 A100 100 0 0 1 250 150 V392 Z"/></clipPath>
+      </defs>
+      <!-- Rahmen -->
+      <path d="M22 400 V146 A128 128 0 0 1 278 146 V400 Z" fill="url(#g1)"/>
+      <path d="M36 400 V148 A114 114 0 0 1 264 148 V400 Z" fill="#6b4813"/>
+      <path d="M42 400 V150 A108 108 0 0 1 258 150 V400 Z" fill="url(#g2)"/>
+      <!-- Türflügel -->
+      <g clip-path="url(#leaves)">
+        <rect x="50" y="40" width="200" height="360" fill="url(#g1)"/>
+        <line x1="150" y1="40" x2="150" y2="400" stroke="#6b4813" stroke-width="3"/>
+        <!-- Kassetten links -->
+        <rect x="66" y="176" width="70" height="88" rx="3" fill="none" stroke="#8a611d" stroke-width="3"/>
+        <rect x="72" y="182" width="58" height="76" rx="2" fill="#d9ad4f" opacity="0.6"/>
+        <rect x="66" y="282" width="70" height="92" rx="3" fill="none" stroke="#8a611d" stroke-width="3"/>
+        <rect x="72" y="288" width="58" height="80" rx="2" fill="#d9ad4f" opacity="0.6"/>
+        <!-- Kassetten rechts -->
+        <rect x="164" y="176" width="70" height="88" rx="3" fill="none" stroke="#8a611d" stroke-width="3"/>
+        <rect x="170" y="182" width="58" height="76" rx="2" fill="#d9ad4f" opacity="0.6"/>
+        <rect x="164" y="282" width="70" height="92" rx="3" fill="none" stroke="#8a611d" stroke-width="3"/>
+        <rect x="170" y="288" width="58" height="80" rx="2" fill="#d9ad4f" opacity="0.6"/>
+        <!-- Lünette mit Sonnenstrahlen -->
+        <g stroke="#8a611d" stroke-width="2" opacity="0.8">
+          <line x1="150" y1="150" x2="62" y2="150"/><line x1="150" y1="150" x2="70" y2="108"/>
+          <line x1="150" y1="150" x2="94" y2="74"/><line x1="150" y1="150" x2="127" y2="54"/>
+          <line x1="150" y1="150" x2="173" y2="54"/><line x1="150" y1="150" x2="206" y2="74"/>
+          <line x1="150" y1="150" x2="230" y2="108"/><line x1="150" y1="150" x2="238" y2="150"/>
+        </g>
+        <path d="M62 152 H238" stroke="#6b4813" stroke-width="4"/>
+        <circle cx="150" cy="150" r="20" fill="url(#g2)" stroke="#6b4813" stroke-width="3"/>
+        <text x="150" y="157" text-anchor="middle" font-family="Playfair Display, serif" font-weight="900" font-size="20" fill="#5a3c0e">G</text>
+        <!-- Glanzstreifen -->
+        <rect class="shine" x="0" y="40" width="80" height="360" fill="url(#sheen)" transform="skewX(-18)"/>
+      </g>
+      <!-- Türknäufe -->
+      <circle cx="136" cy="276" r="7" fill="url(#g2)" stroke="#6b4813" stroke-width="2"/>
+      <circle cx="164" cy="276" r="7" fill="url(#g2)" stroke="#6b4813" stroke-width="2"/>
+      <!-- Schloss mit Kette -->
+      <path d="M118 240 Q150 262 182 240" fill="none" stroke="#7a5418" stroke-width="5" stroke-dasharray="9 4" stroke-linecap="round"/>
+      <path d="M140 246 v-10 a10 10 0 0 1 20 0 v10" fill="none" stroke="#6b4813" stroke-width="5"/>
+      <rect x="134" y="244" width="32" height="28" rx="4" fill="url(#g1)" stroke="#6b4813" stroke-width="2"/>
+      <circle class="glow" cx="150" cy="256" r="16" fill="url(#light)"/>
+      <circle cx="150" cy="254" r="3.5" fill="#1a1006"/>
+      <path d="M148 256 h4 l1.5 9 h-7 z" fill="#1a1006"/>
+      <!-- Schild -->
+      <rect x="80" y="198" width="140" height="26" rx="3" fill="#022859" stroke="#e8c060" stroke-width="1.5"/>
+      <text x="150" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="9.5" letter-spacing="1.2" fill="#e8c060">NUR FÜR MITGLIEDER</text>
+      <!-- Lichtschein unter der Tür -->
+      <rect x="54" y="394" width="192" height="6" fill="#ffd36b" class="glow"/>
+    </svg>
+  </button>
+
+  <svg class="rope" viewBox="0 0 420 110" role="img" aria-hidden="true">
+    <defs>
+      <linearGradient id="post" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#9c6f22"/><stop offset="0.5" stop-color="#fff1bf"/><stop offset="1" stop-color="#9c6f22"/>
+      </linearGradient>
+    </defs>
+    <path d="M40 30 Q210 92 380 30" fill="none" stroke="#5c0d1f" stroke-width="13" stroke-linecap="round"/>
+    <path d="M40 30 Q210 88 380 30" fill="none" stroke="#8e1630" stroke-width="9" stroke-linecap="round"/>
+    <g>
+      <circle cx="40" cy="20" r="10" fill="url(#post)"/>
+      <rect x="35" y="26" width="10" height="70" fill="url(#post)"/>
+      <ellipse cx="40" cy="100" rx="24" ry="7" fill="url(#post)"/>
+    </g>
+    <g>
+      <circle cx="380" cy="20" r="10" fill="url(#post)"/>
+      <rect x="375" y="26" width="10" height="70" fill="url(#post)"/>
+      <ellipse cx="380" cy="100" rx="24" ry="7" fill="url(#post)"/>
+    </g>
+  </svg>
+</div>
+
+<p class="hint" id="hint" aria-live="polite"></p>
+
+<p class="countdown-label" id="cd-label">Die Tür öffnet sich in</p>
+<div class="countdown" id="countdown" aria-live="off">
+  <div class="unit"><b id="d">--</b><span>Tage</span></div>
+  <div class="unit"><b id="h">--</b><span>Std.</span></div>
+  <div class="unit"><b id="m">--</b><span>Min.</span></div>
+  <div class="unit"><b id="s">--</b><span>Sek.</span></div>
+</div>
+<p class="date">Am <strong>27. November 2026 um 18:30 Uhr</strong> beim Winterfest</p>
+
+<div class="plaque">
+  <b>Das goldene Zeitalter des GoldClubs</b>
+  Künstlerkollektiv Marketing, 2026
+  <em>Zurzeit in Restaurierung. Bitte nicht berühren. (Oder doch, versuchen Sie es ruhig.)</em>
+</div>
+
+<footer>Ein Exponat des Marketing-Teams · Vernissage After Dark · Diese Seite speichert keine Daten.</footer>
+
+<script>
+  // Countdown bis 27.11.2026, 18:30 Uhr deutscher Zeit (MEZ = UTC+1)
+  const TARGET = Date.UTC(2026, 10, 27, 17, 30, 0);
+  const el = (id) => document.getElementById(id);
+  const pad = (n) => String(n).padStart(2, "0");
+  function tick() {
+    let diff = Math.max(0, TARGET - Date.now());
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+    const m = Math.floor(diff / 60000); diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    el("d").textContent = d; el("h").textContent = pad(h); el("m").textContent = pad(m); el("s").textContent = pad(s);
+    if (TARGET - Date.now() <= 0) {
+      el("cd-label").textContent = "Die Türen sind geöffnet";
+      el("hint").textContent = "Bitte laden Sie die Seite neu. Die Ausstellung wartet.";
+      clearInterval(timer);
+    }
+  }
+  tick();
+  const timer = setInterval(tick, 1000);
+
+  // Die Tür bleibt zu
+  const lines = [
+    "Verschlossen. Selbst für Goldmitglieder.",
+    "Psst … dahinter wird noch poliert.",
+    "Bitte nicht drücken. Ziehen hilft auch nicht.",
+    "Ihre Punkte reichen leider noch nicht für diese Tür.",
+    "Haben Sie es schon mit „Sesam, öffne dich“ versucht?",
+    "Noch ein bisschen Geduld. Gold braucht Zeit."
+  ];
+  let i = 0;
+  const door = el("door");
+  door.addEventListener("click", () => {
+    door.classList.remove("shake"); void door.offsetWidth; door.classList.add("shake");
+    el("hint").textContent = lines[i % lines.length];
+    i++;
+    if (navigator.vibrate) { try { navigator.vibrate(60); } catch (e) {} }
+  });
+</script>
+</body>
+</html>
