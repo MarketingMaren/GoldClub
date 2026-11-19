@@ -304,10 +304,17 @@ body.mon .bar-in{max-width:1100px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
 .wobble{animation:wob .4s 2}
+/* Startzustand: bis der Server die Phase kennt, nur dunkler Sperrseiten-Hintergrund, kein Spiel-Rahmen */
+html:has(body.booting),html:has(body.locked),body.booting{background:#05101f}
+body.booting{background:#05101f!important}
+body.booting::before{background:#05101f}
+body.booting .bar,body.booting #app,body.booting .bot-fab,body.booting .simbadge{visibility:hidden}
+.lock-fade{opacity:0;transition:opacity .3s ease}
+.lock-fade.ready{opacity:1}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
 </head>
-<body>
+<body class="booting">
 
 <header class="bar"><div class="bar-in">
   <span class="brand" id="brand">GoldClub <b>Level 4</b></span>
@@ -857,6 +864,7 @@ function renderBoard(b){
 }
 
 function render(){
+  document.body.classList.toggle("booting", S.step === "loading");
   document.body.classList.toggle("locked", S.step === "lock");
   timerEl.hidden = ["lock","ended","monitor"].includes(S.step);
   pill.hidden = !S.startedAt || ["lock","ended","monitor"].includes(S.step);
@@ -1311,7 +1319,7 @@ const DOOR_SVG = `<svg viewBox="0 0 300 330" aria-hidden="true">
 </svg>`;
 views.lock = () => {
   app.innerHTML = `
-  <section class="lock">
+  <section class="lock lock-fade" id="lockview">
     <p class="eyebrow">Ein Escape Game vom Marketing-Team</p>
     <h1 class="gold-h" id="lockh">GoldClub<br>Level 4</h1>
     <p class="lead">Hinter dieser Tür wartet das exklusivste Abo des Abends. Und der schwierigste Ausgang.</p>
@@ -1332,6 +1340,9 @@ views.lock = () => {
   };
   const iv = setInterval(tick, 1000); tick();
   secretTaps($("#medal")); secretTaps($("#lockh"));
+  // Erst einblenden, wenn die Schrift geladen ist (max. 1,2 s warten)
+  Promise.race([document.fonts ? document.fonts.load('900 1em "Playfair Display"') : null, new Promise(r => setTimeout(r, 1200))].filter(Boolean))
+    .catch(() => {}).then(() => $("#lockview")?.classList.add("ready"));
 };
 
 let endBoard = null;
