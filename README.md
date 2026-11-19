@@ -11,7 +11,7 @@ Live unter **https://das-goldene-zeitalter-des-goldclubs.vercel.app/** (direkt u
 | 27.11.2026, 18:30 bis 23:59:59 | Spiel läuft |
 | ab 28.11.2026, 00:00 | Nur noch die finale Rangliste mit den Gewinner:innen |
 
-Preise: 1. Platz 100 € Gutschein · 2. Platz Süße GoldClub-Karte · 3. Platz Goldenes Schreibtisch-Upgrade (in `app/index.html` unter `PRIZES`).
+Preise: 1. Platz 100 € Hotel-Guthaben · 2. Platz Süße GoldClub-Karte · 3. Platz Goldenes Schreibtisch-Upgrade (in `app/index.html` unter `PRIZES`).
 
 ## Team-Menü (versteckt, jederzeit erreichbar)
 Drei Wege, in jeder Phase (Sperrseite, Spiel, Spielende):
